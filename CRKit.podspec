@@ -22,6 +22,4 @@ Pod::Spec.new do |s|
   s.dependency 'ReactiveCocoa', '~> 2.5'
   s.dependency 'SDWebImage', '~> 3.8.1'
   s.dependency 'YYKit', '~> 1.0.7'
-  s.dependency 'RMUniversalAlert', '~> 0.8'
-  s.dependency 'PinYin4Objc', '~> 1.1.1'
 end
