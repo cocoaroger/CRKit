@@ -10,8 +10,6 @@ target 'CRKit' do
     pod 'AFNetworking', :git => 'https://github.com/AFNetworking/AFNetworking.git'
     
     pod 'Masonry', :git => 'https://github.com/cloudkite/Masonry.git'
-    
-    pod 'PinYin4Objc', :git => 'https://github.com/kimziv/PinYin4Objc.git'
 
     pod 'RMUniversalAlert',  :git => 'https://github.com/ryanmaxwell/RMUniversalAlert.git'
 

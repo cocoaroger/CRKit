@@ -26,13 +26,6 @@
  */
 - (BOOL)cr_hasValue;
 
-/**
- *  汉字转拼音
- *
- *  @return 返回转换后的拼音
- */
-- (NSString *)cr_hanzToPinyin;
-
 @end
 
 /**
