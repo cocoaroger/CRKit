@@ -7,7 +7,6 @@
 //
 
 #import "NSString+CRAdd.h"
-#import "PinYin4Objc.h"
 
 @implementation NSString (CRAdd)
 
@@ -23,16 +22,6 @@
     } else {
         return YES;
     }
-}
-
-- (NSString *)cr_hanzToPinyin {
-    HanyuPinyinOutputFormat *outputFormat=[[HanyuPinyinOutputFormat alloc] init];
-    [outputFormat setToneType:ToneTypeWithoutTone];
-    [outputFormat setVCharType:VCharTypeWithV];
-    [outputFormat setCaseType:CaseTypeLowercase];
-    NSString *outputPinyin = [PinyinHelper toHanyuPinyinStringWithNSString:self
-                                               withHanyuPinyinOutputFormat:outputFormat withNSString:@""];
-    return [outputPinyin lowercaseString];
 }
 
 @end
