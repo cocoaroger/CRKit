@@ -19,6 +19,7 @@
 		DB6F25971D375FB300B6CA60 /* UIImage+CRAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F25961D375FB300B6CA60 /* UIImage+CRAdd.m */; };
 		DB6F259A1D37612500B6CA60 /* UITextField+CRAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F25991D37612500B6CA60 /* UITextField+CRAdd.m */; };
 		DB6F259E1D3765D600B6CA60 /* UIImageView+CRAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F259D1D3765D600B6CA60 /* UIImageView+CRAdd.m */; };
+		DBDD527B1D37983000650D6A /* CRKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DBDD527A1D37983000650D6A /* CRKit.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		DB6F259B1D3763EA00B6CA60 /* CRKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRKit.h; sourceTree = "<group>"; };
 		DB6F259C1D3765D600B6CA60 /* UIImageView+CRAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CRAdd.h"; sourceTree = "<group>"; };
 		DB6F259D1D3765D600B6CA60 /* UIImageView+CRAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CRAdd.m"; sourceTree = "<group>"; };
+		DBDD527A1D37983000650D6A /* CRKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CRKit.podspec; sourceTree = "<group>"; };
 		F5296177818031174D9BBC81 /* Pods-CRKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRKit/Pods-CRKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 		DB6F25611D3729FF00B6CA60 = {
 			isa = PBXGroup;
 			children = (
+				DBDD527A1D37983000650D6A /* CRKit.podspec */,
 				DB6F256C1D3729FF00B6CA60 /* CRKit */,
 				DB6F256B1D3729FF00B6CA60 /* Products */,
 				5586B25348441F5D8D1D3923 /* Pods */,
@@ -219,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBDD527B1D37983000650D6A /* CRKit.podspec in Resources */,
 				DB6F25741D3729FF00B6CA60 /* Assets.xcassets in Resources */,
 				DB6F25771D3729FF00B6CA60 /* LaunchScreen.storyboard in Resources */,
 			);
