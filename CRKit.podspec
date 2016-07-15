@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'CRKit'
   s.summary      = '符合自己的项目需求的常用第三方库和控件整合'
-  s.version      = '0.0.8'
+  s.version      = '0.0.9'
   s.homepage     = 'https://github.com/cocoaroger/CRKit'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author             = { 'roger wu' => 'cocoaroger@163.com' }
