@@ -1,0 +1,21 @@
+##第一步：
+pod spec create CRKit
+
+##第二步：
+注意： podspec里设置的version要与release的版本相同
+注意： 先把项目提交到git上，并且创建release版本,
+
+
+##第三步：
+验证命令pod spec lint CRKit.podspec , 直到验证通过
+>注意不能在.h文件中引用别的第三方库，会报错说找不到这个module，即使你已经在poddesc里面dependency
+>
+
+##第四步：
+提交到CocoaPods：
+第一次提交时先执行命令：pod trunk register cocoaroger@163.com 'CRKit'
+然后：pod trunk push CRKit.podspec
+
+以后的提交只需要执行 pod trunk push CRKit.podspec
+
+提交完成后，就可以通过pod search CRKit 查看有没有安装好

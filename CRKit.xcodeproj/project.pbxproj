@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A494284C8871880245912A2E /* libPods-CRKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA7483A584D98DD89C4EBBF /* libPods-CRKit.a */; };
+		DB334DF11D386E49000C5BF8 /* PodStep in Resources */ = {isa = PBXBuildFile; fileRef = DB334DF01D386E49000C5BF8 /* PodStep */; };
+		DB334DF51D387186000C5BF8 /* CRTimeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DB334DF41D387186000C5BF8 /* CRTimeButton.m */; };
 		DB6F256F1D3729FF00B6CA60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F256E1D3729FF00B6CA60 /* main.m */; };
 		DB6F25721D3729FF00B6CA60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F25711D3729FF00B6CA60 /* AppDelegate.m */; };
 		DB6F25741D3729FF00B6CA60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB6F25731D3729FF00B6CA60 /* Assets.xcassets */; };
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		29EE57A302C71FAD3FF2EAFA /* Pods-CRKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRKit/Pods-CRKit.debug.xcconfig"; sourceTree = "<group>"; };
 		3BA7483A584D98DD89C4EBBF /* libPods-CRKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CRKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB334DF01D386E49000C5BF8 /* PodStep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodStep; sourceTree = "<group>"; };
+		DB334DF31D387186000C5BF8 /* CRTimeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeButton.h; sourceTree = "<group>"; };
+		DB334DF41D387186000C5BF8 /* CRTimeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeButton.m; sourceTree = "<group>"; };
 		DB6F256A1D3729FF00B6CA60 /* CRKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6F256E1D3729FF00B6CA60 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DB6F25701D3729FF00B6CA60 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,6 +78,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DB334DF21D386F65000C5BF8 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				DB334DF31D387186000C5BF8 /* CRTimeButton.h */,
+				DB334DF41D387186000C5BF8 /* CRTimeButton.m */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
 		DB6F25611D3729FF00B6CA60 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +118,7 @@
 				DB6F25751D3729FF00B6CA60 /* LaunchScreen.storyboard */,
 				DB6F25781D3729FF00B6CA60 /* Info.plist */,
 				DB6F256D1D3729FF00B6CA60 /* Supporting Files */,
+				DB334DF01D386E49000C5BF8 /* PodStep */,
 			);
 			path = CRKit;
 			sourceTree = "<group>";
@@ -119,6 +134,7 @@
 		DB6F257E1D372C7800B6CA60 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DB334DF21D386F65000C5BF8 /* UIComponent */,
 				DB6F257F1D372C7800B6CA60 /* Category */,
 				DB6F25801D372C7800B6CA60 /* Macro */,
 				DB6F259B1D3763EA00B6CA60 /* CRKit.h */,
@@ -224,6 +240,7 @@
 			files = (
 				DBDD527B1D37983000650D6A /* CRKit.podspec in Resources */,
 				DB6F25741D3729FF00B6CA60 /* Assets.xcassets in Resources */,
+				DB334DF11D386E49000C5BF8 /* PodStep in Resources */,
 				DB6F25771D3729FF00B6CA60 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +305,7 @@
 				DB6F25971D375FB300B6CA60 /* UIImage+CRAdd.m in Sources */,
 				DB6F25941D375FA700B6CA60 /* UIButton+CRAdd.m in Sources */,
 				DB6F25721D3729FF00B6CA60 /* AppDelegate.m in Sources */,
+				DB334DF51D387186000C5BF8 /* CRTimeButton.m in Sources */,
 				DB6F259E1D3765D600B6CA60 /* UIImageView+CRAdd.m in Sources */,
 				DB6F256F1D3729FF00B6CA60 /* main.m in Sources */,
 				DB6F259A1D37612500B6CA60 /* UITextField+CRAdd.m in Sources */,

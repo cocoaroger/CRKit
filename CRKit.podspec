@@ -10,9 +10,23 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.1'
   s.source       = { :git => 'https://github.com/cocoaroger/CRKit.git', :tag => s.version.to_s }
 
-  s.source_files  = 'CRKit/Common/**/*.{h,m}'
-  s.public_header_files = 'CRKit/Common/**/*.{h}'
+  s.source_files  = 'CRKit/Common/CRKit.h'
+  s.public_header_files = 'CRKit/Common/CRKit.h'
 
+  s.subspec 'UIComponent' do |u|
+    u.source_files = 'CRKit/Common/UIComponent/*.{h,m}'
+    u.public_header_files = 'CRKit/Common/UIComponent/*.{h}'
+  end
+
+  s.subspec 'Category' do |c|
+    c.source_files = 'CRKit/Common/Category/*.{h,m}'
+    c.public_header_files = 'CRKit/Common/Category/*.{h}'
+  end
+
+  s.subspec 'Macro' do |m|
+    m.source_files = 'CRKit/Common/Macro/*.{h,m}'
+    m.public_header_files = 'CRKit/Common/Macro/*.{h}'
+  end
 
   s.dependency 'AFNetworking', '~> 3.1.0'
   s.dependency 'IQKeyboardManager', '~> 3.3.7'
