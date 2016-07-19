@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'CRKit'
-  s.summary      = '符合自己的项目需求的常用第三方库和控件整合'
-  s.version      = '0.0.9'
+  s.summary      = '常用第三方库引用，常用Category、Macro、UIComponent'
+  s.version      = '0.1.0'
   s.homepage     = 'https://github.com/cocoaroger/CRKit'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author             = { 'roger wu' => 'cocoaroger@163.com' }
@@ -35,5 +35,6 @@ Pod::Spec.new do |s|
   s.dependency 'Masonry', '~> 1.0.1'
   s.dependency 'ReactiveCocoa', '~> 2.5'
   s.dependency 'SDWebImage', '~> 3.8.1'
-  s.dependency 'YYKit', '~> 1.0.7'
+  s.dependency 'YYText', '~> 1.0.5'
+  s.dependency 'YYCategories', '~> 1.0.3'
 end
