@@ -1,4 +1,5 @@
 ##第一步：
+创建podspec文件
 pod spec create CRKit
 
 ##第二步：

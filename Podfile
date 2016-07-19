@@ -21,4 +21,9 @@ target 'CRKit' do
     
     pod 'RMUniversalAlert', :git => 'https://github.com/ryanmaxwell/RMUniversalAlert.git'
     
+    pod 'IMYWebView', :git => 'https://github.com/li6185377/IMYWebView.git'
+    
+    pod 'pop', :git => 'https://github.com/facebook/pop.git'
+    
+    pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
 end

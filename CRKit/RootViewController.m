@@ -10,11 +10,17 @@
 #import "CRTimeButton.h"
 #import "Masonry.h"
 #import "RMUniversalAlert.h"
+#import "IMYWebView.h"
 
-@interface RootViewController ()<CRTimeButtonDelegate>
+@interface RootViewController ()<
+    CRTimeButtonDelegate,
+    IMYWebViewDelegate>
 
 @property (nonatomic, weak) CRTimeButton *timeButton;
 
+@property (nonatomic, weak) UIButton *testAlertButton;
+
+@property (nonatomic, weak) IMYWebView *webView;
 @end
 
 @implementation RootViewController
@@ -25,8 +31,12 @@
     
     [self setupTimeButton];
     [self setupAlertButton];
+    [self setupWebView];
 }
 
+/**
+ *  测试发送验证码按钮
+ */
 - (void)setupTimeButton {
     CRTimeButton *timeButton = [[CRTimeButton alloc] init];
     timeButton.backgroundColor = [UIColor blackColor];
@@ -36,9 +46,10 @@
     
     __weak __typeof(&*self) weakSelf = self;
     [timeButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(weakSelf.view);
         make.width.mas_equalTo(100.f);
         make.height.mas_equalTo(44.f);
+        make.centerX.equalTo(weakSelf.view);
+        make.top.mas_equalTo(50.f);
     }];
     
 }
@@ -50,12 +61,16 @@
     });
 }
 
+/**
+ *  测试兼容UIAlertView和UIAlertController
+ */
 - (void)setupAlertButton {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitle:@"测试alert" forState:UIControlStateNormal];
     button.backgroundColor = [UIColor blackColor];
     [button addTarget:self action:@selector(testAlert) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    self.testAlertButton = button;
     
     __weak __typeof(&*self) weakSelf = self;
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -82,6 +97,25 @@
                                                NSLog(@"Other Button Index %ld", (long)buttonIndex - alert.firstOtherButtonIndex);
                                            }
                                        }];
+}
+
+/**
+ *  测试兼容WKWebView和UIWebView
+ */
+- (void)setupWebView {
+    IMYWebView *webView = [[IMYWebView alloc] init];
+    webView.delegate = self;
+    [self.view addSubview:webView];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.tmall.com"]];
+    [webView loadRequest:request];
+    
+    __weak __typeof(&*self) weakSelf = self;
+    [webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(weakSelf.view.mas_width);
+        make.height.mas_equalTo(400.f);
+        make.top.equalTo(weakSelf.testAlertButton.mas_bottom).offset(20.f);
+    }];
 }
 
 - (void)dealloc {
