@@ -19,6 +19,9 @@ target 'CRKit' do
     
     pod 'YYCategories',  :git => 'https://github.com/ibireme/YYCategories.git'
     
+    pod 'SDCycleScrollView', :git => 'https://github.com/gsdios/SDCycleScrollView.git'
+
+
     
     pod 'PinYin4Objc', :git => 'https://github.com/kimziv/PinYin4Objc.git'
     
