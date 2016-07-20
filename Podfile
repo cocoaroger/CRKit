@@ -30,4 +30,6 @@ target 'CRKit' do
     pod 'pop', :git => 'https://github.com/facebook/pop.git'
     
     pod 'SDCycleScrollView', :git => 'https://github.com/gsdios/SDCycleScrollView.git'
+  
+    pod 'UMengAnalytics-NO-IDFA'
 end

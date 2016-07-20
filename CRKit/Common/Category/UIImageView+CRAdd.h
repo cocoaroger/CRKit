@@ -16,6 +16,6 @@
  *  @param url         图片地址
  *  @param placeholder 占位图片
  */
-- (void)cr_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder;
+//- (void)cr_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder;
 
 @end
