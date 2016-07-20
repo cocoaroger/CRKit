@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40283CFB1D3F073F00D6D0BA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 40283CFA1D3F073F00D6D0BA /* README.md */; };
 		A494284C8871880245912A2E /* libPods-CRKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BA7483A584D98DD89C4EBBF /* libPods-CRKit.a */; };
 		DB334DF11D386E49000C5BF8 /* PodStep in Resources */ = {isa = PBXBuildFile; fileRef = DB334DF01D386E49000C5BF8 /* PodStep */; };
 		DB334DF51D387186000C5BF8 /* CRTimeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DB334DF41D387186000C5BF8 /* CRTimeButton.m */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		29EE57A302C71FAD3FF2EAFA /* Pods-CRKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CRKit/Pods-CRKit.debug.xcconfig"; sourceTree = "<group>"; };
 		3BA7483A584D98DD89C4EBBF /* libPods-CRKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CRKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40283CFA1D3F073F00D6D0BA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DB334DF01D386E49000C5BF8 /* PodStep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PodStep; path = CRKit/PodStep; sourceTree = "<group>"; };
 		DB334DF31D387186000C5BF8 /* CRTimeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRTimeButton.h; sourceTree = "<group>"; };
 		DB334DF41D387186000C5BF8 /* CRTimeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRTimeButton.m; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		DB6F25611D3729FF00B6CA60 = {
 			isa = PBXGroup;
 			children = (
+				40283CFA1D3F073F00D6D0BA /* README.md */,
 				DBDD527A1D37983000650D6A /* CRKit.podspec */,
 				DB334DF01D386E49000C5BF8 /* PodStep */,
 				DB6F256C1D3729FF00B6CA60 /* CRKit */,
@@ -309,6 +312,7 @@
 				DB6F259E1D3765D600B6CA60 /* UIImageView+CRAdd.m in Sources */,
 				DB6F256F1D3729FF00B6CA60 /* main.m in Sources */,
 				DB6F259A1D37612500B6CA60 /* UITextField+CRAdd.m in Sources */,
+				40283CFB1D3F073F00D6D0BA /* README.md in Sources */,
 				DB6F25841D372C9100B6CA60 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

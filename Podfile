@@ -18,11 +18,9 @@ target 'CRKit' do
     pod 'YYText',  :git => 'https://github.com/ibireme/YYText.git'
     
     pod 'YYCategories',  :git => 'https://github.com/ibireme/YYCategories.git'
-    
-    pod 'SDCycleScrollView', :git => 'https://github.com/gsdios/SDCycleScrollView.git'
 
 
-    
+#下面这些不是必须要引用的#
     pod 'PinYin4Objc', :git => 'https://github.com/kimziv/PinYin4Objc.git'
     
     pod 'RMUniversalAlert', :git => 'https://github.com/ryanmaxwell/RMUniversalAlert.git'
