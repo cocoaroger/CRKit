@@ -28,5 +28,5 @@ target 'CRKit' do
     
     pod 'pop', :git => 'https://github.com/facebook/pop.git'
     
-    pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
+    pod 'SDCycleScrollView', :git => 'https://github.com/gsdios/SDCycleScrollView.git'
 end
