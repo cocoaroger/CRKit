@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'CRKit'
   s.summary      = '常用第三方库引用，常用Category、Macro、UIComponent'
-  s.version      = '0.1.0'
+  s.version      = '0.1.1'
   s.homepage     = 'https://github.com/cocoaroger/CRKit'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author             = { 'roger wu' => 'cocoaroger@163.com' }
