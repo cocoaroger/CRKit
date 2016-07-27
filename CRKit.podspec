@@ -28,10 +28,8 @@ Pod::Spec.new do |s|
     m.public_header_files = 'CRKit/Common/Macro/*.{h}'
   end
 
-
-#  s.dependency 'ReactiveCocoa', '~> 2.5'
-
 # 这些库暂时不引用
+  # s.dependency 'ReactiveCocoa', '~> 2.5'
   # s.dependency 'AFNetworking', '~> 3.1.0'
   # s.dependency 'IQKeyboardManager', '~> 3.3.7'
   # s.dependency 'MJExtension', '~> 3.0.11'
