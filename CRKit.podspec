@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'CRKit'
   s.summary      = '常用第三方库引用，常用Category、Macro、UIComponent'
-  s.version      = '0.1.3'
+  s.version      = '0.1.4'
   s.homepage     = 'https://github.com/cocoaroger/CRKit'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author             = { 'roger wu' => 'cocoaroger@163.com' }
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
   end
 
 
-  s.dependency 'ReactiveCocoa', '~> 2.5'
+#  s.dependency 'ReactiveCocoa', '~> 2.5'
 
 # 这些库暂时不引用
   # s.dependency 'AFNetworking', '~> 3.1.0'
