@@ -29,7 +29,7 @@
 
 
 /**
- *  关闭定时器
+ *  关闭定时器,在控制器dealloc的方法中要记得调用
  */
 - (void)invalidateTimer;
 
