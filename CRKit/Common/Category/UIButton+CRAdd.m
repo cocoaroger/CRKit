@@ -22,7 +22,7 @@ static const CGFloat kHighlightedAlpha = 0.6f;
 }
 
 - (void)cr_setImage:(UIImage *)image {
-    [self setBackgroundImage:image forState:UIControlStateNormal];
+    [self setImage:image forState:UIControlStateNormal];
     
     UIImage *highlightedImage = [image cr_imageWithAlpha:kHighlightedAlpha];
     [self setImage:highlightedImage forState:UIControlStateHighlighted];
