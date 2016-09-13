@@ -42,16 +42,24 @@ static NSString* const kOldAppVersionKey = @"kOldAppVersionKey";
     NSString *oldVersion = [self cr_getObjectForKey:kOldAppVersionKey];
     
     if (!oldVersion) {
-        launchControllerBlock();
+        if (launchControllerBlock) {
+            launchControllerBlock();
+        }
         [self cr_saveObject:newVersion forKey:kOldAppVersionKey];
     } else {
         if ([oldVersion isEqualToString:newVersion]) {
-            mainControllerBlock();
+            if (mainControllerBlock) {
+                mainControllerBlock();
+            }
         } else {
             if (isShow) {
-                launchControllerBlock();
+                if (launchControllerBlock) {
+                    launchControllerBlock();
+                }
             } else {
-                mainControllerBlock();
+                if (mainControllerBlock) {
+                    mainControllerBlock();
+                }
             }
             [self cr_saveObject:newVersion forKey:kOldAppVersionKey];
         }

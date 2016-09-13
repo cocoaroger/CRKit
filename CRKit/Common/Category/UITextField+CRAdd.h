@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class RACSignal;
+//@class RACSignal;
 
 @interface UITextField (CRAdd)
 
@@ -21,6 +21,6 @@
  *
  *  @return 信号
  */
-- (RACSignal *)rac_keyboardReturnSignal;
+//- (RACSignal *)rac_keyboardReturnSignal;
 
 @end

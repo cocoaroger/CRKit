@@ -20,7 +20,7 @@ target 'CRKit' do
     pod 'YYCategories',  :git => 'https://github.com/ibireme/YYCategories.git'
 
 
-#下面这些不是必须要引用的#
+#下面这些不是推荐用的#
     pod 'PinYin4Objc', :git => 'https://github.com/kimziv/PinYin4Objc.git'
     
     pod 'RMUniversalAlert', :git => 'https://github.com/ryanmaxwell/RMUniversalAlert.git'

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'CRKit'
   s.summary      = '常用第三方库引用，常用Category、Macro、UIComponent'
-  s.version      = '0.1.2'
+  s.version      = '0.1.4'
   s.homepage     = 'https://github.com/cocoaroger/CRKit'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author             = { 'roger wu' => 'cocoaroger@163.com' }
@@ -28,10 +28,8 @@ Pod::Spec.new do |s|
     m.public_header_files = 'CRKit/Common/Macro/*.{h}'
   end
 
-
-  s.dependency 'ReactiveCocoa', '~> 2.5'
-
 # 这些库暂时不引用
+  # s.dependency 'ReactiveCocoa', '~> 2.5'
   # s.dependency 'AFNetworking', '~> 3.1.0'
   # s.dependency 'IQKeyboardManager', '~> 3.3.7'
   # s.dependency 'MJExtension', '~> 3.0.11'

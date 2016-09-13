@@ -9,7 +9,7 @@
 #ifndef CRKit_h
 #define CRKit_h
 
-// define
+// Macro
 #import "CRMacro.h"
 
 // Category

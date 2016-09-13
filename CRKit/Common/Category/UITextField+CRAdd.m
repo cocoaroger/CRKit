@@ -7,13 +7,13 @@
 //
 
 #import "UITextField+CRAdd.h"
-#import "RACSignal.h"
-#import "RACSignal+Operations.h"
-#import "UIControl+RACSignalSupport.h"
-#import "NSObject+RACDeallocating.h"
-#import "RACEXTScope.h"
-
-#import "NSObject+RACDescription.h"
+//#import "RACSignal.h"
+//#import "RACSignal+Operations.h"
+//#import "UIControl+RACSignalSupport.h"
+//#import "NSObject+RACDeallocating.h"
+//#import "RACEXTScope.h"
+//
+//#import "NSObject+RACDescription.h"
 
 @implementation UITextField (CRAdd)
 
@@ -23,16 +23,16 @@
     self.attributedPlaceholder = attributedString;
 }
 
-- (RACSignal *)rac_keyboardReturnSignal {
-    @weakify(self);
-    return [[[[[RACSignal
-               defer:^{
-                   @strongify(self);
-                   return [RACSignal return:self];
-               }]
-              concat:[self rac_signalForControlEvents:UIControlEventEditingDidEndOnExit]]
-             takeUntil:self.rac_willDeallocSignal]
-            setNameWithFormat:@"%@ -rac_keyboardReturnSignal", [self rac_description]] skip:1];
-}
+//- (RACSignal *)rac_keyboardReturnSignal {
+//    @weakify(self);
+//    return [[[[[RACSignal
+//               defer:^{
+//                   @strongify(self);
+//                   return [RACSignal return:self];
+//               }]
+//              concat:[self rac_signalForControlEvents:UIControlEventEditingDidEndOnExit]]
+//             takeUntil:self.rac_willDeallocSignal]
+//            setNameWithFormat:@"%@ -rac_keyboardReturnSignal", [self rac_description]] skip:1];
+//}
 
 @end
