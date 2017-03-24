@@ -7,7 +7,7 @@
 //
 
 #import "UIImageView+CRAdd.h"
-//#import "UIImageView+WebCache.h"
+#import "UIImageView+WebCache.h"
 
 @implementation UIImageView (CRAdd)
 
@@ -17,7 +17,9 @@
 //            placeholderImage:placeholder
 //                     options:SDWebImageRetryFailed|SDWebImageAvoidAutoSetImage
 //                   completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-//                       weakSelf.image = image;
+//                       if (image) {
+//                           weakSelf.image = image;
+//                       }
 //                       weakSelf.alpha = 0.5f;
 //                       [UIView animateWithDuration:0.2f animations:^{
 //                           weakSelf.alpha = 1.f;
