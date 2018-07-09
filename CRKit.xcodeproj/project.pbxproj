@@ -259,10 +259,10 @@
 			isa = PBXGroup;
 			children = (
 				DB64E10620EF090300B931B6 /* CRKit.h */,
+				DB64E10420EF090300B931B6 /* Macro */,
 				DB64E11E20EF12A100B931B6 /* BaseController */,
 				DB64E0F720EF090300B931B6 /* Category */,
 				DBA60F9020F2F86A002E5FCC /* Vender */,
-				DB64E10420EF090300B931B6 /* Macro */,
 				DBA60FBD20F2FB87002E5FCC /* Utils */,
 				DB64E10720EF090300B931B6 /* UIComponent */,
 			);
@@ -285,14 +285,14 @@
 				DB64E0FB20EF090300B931B6 /* UIImageView+CRExtention.m */,
 				DB64E0FD20EF090300B931B6 /* UIImage+CRExtention.h */,
 				DB64E10120EF090300B931B6 /* UIImage+CRExtention.m */,
+				DBA60FB720F2F8FC002E5FCC /* UIView+CRExtension.h */,
+				DBA60FB820F2F8FC002E5FCC /* UIView+CRExtension.m */,
 				DBA60F2720F2F063002E5FCC /* UIAlertController+Blocks.h */,
 				DBA60F2620F2F062002E5FCC /* UIAlertController+Blocks.m */,
 				DBA60F2320F2EFDD002E5FCC /* UIViewController+CRExtension.h */,
 				DBA60F2420F2EFDD002E5FCC /* UIViewController+CRExtension.m */,
 				DBA60F8D20F2F717002E5FCC /* MBProgressHUD+CRExtension.h */,
 				DBA60F8E20F2F717002E5FCC /* MBProgressHUD+CRExtension.m */,
-				DBA60FB720F2F8FC002E5FCC /* UIView+CRExtension.h */,
-				DBA60FB820F2F8FC002E5FCC /* UIView+CRExtension.m */,
 				DBA60FBB20F2FA2D002E5FCC /* UIAlertController+CRExtension.h */,
 				DBA60FBA20F2FA2C002E5FCC /* UIAlertController+CRExtension.m */,
 			);

@@ -12,12 +12,28 @@
 // Macro
 #import "CRMacro.h"
 
+// Base
+#import "CRBaseController.h"
+#import "CRNavigationController.h"
+#import "CRTabBarController.h"
+#import "CRWebViewController.h"
+
 // Category
+#import "YYCategories.h"
 #import "NSString+CRExtention.h"
 #import "NSUserDefaults+CRExtention.h"
 #import "UIButton+CRExtention.h"
 #import "UITextField+CRExtention.h"
-#import "UIImageView+CRExtention.h"
 #import "UIImage+CRExtention.h"
+#import "UIView+CRExtension.h"
+#import "UIAlertController+Blocks.h"
+#import "MBProgressHUD+CRExtension.h"
+#import "UIViewController+CRExtension.h"
+#import "UIAlertController+CRExtension.h"
+
+// Utils
+#import "CRSystemAuthorization.h"
+
+
 
 #endif /* CRKit_h */
