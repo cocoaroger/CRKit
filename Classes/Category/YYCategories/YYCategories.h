@@ -17,7 +17,6 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import <YYCategories/YYCategoriesMacro.h>
 #import <YYCategories/NSObject+YYAdd.h>
 #import <YYCategories/NSObject+YYAddForKVO.h>
-#import <YYCategories/NSObject+YYAddForARC.h>
 #import <YYCategories/NSData+YYAdd.h>
 #import <YYCategories/NSString+YYAdd.h>
 #import <YYCategories/NSArray+YYAdd.h>
@@ -28,7 +27,6 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import <YYCategories/NSKeyedUnarchiver+YYAdd.h>
 #import <YYCategories/NSTimer+YYAdd.h>
 #import <YYCategories/NSBundle+YYAdd.h>
-#import <YYCategories/NSThread+YYAdd.h>
 #import <YYCategories/UIColor+YYAdd.h>
 #import <YYCategories/UIImage+YYAdd.h>
 #import <YYCategories/UIControl+YYAdd.h>
@@ -49,7 +47,6 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import "YYCategoriesMacro.h"
 #import "NSObject+YYAdd.h"
 #import "NSObject+YYAddForKVO.h"
-#import "NSObject+YYAddForARC.h"
 #import "NSData+YYAdd.h"
 #import "NSString+YYAdd.h"
 #import "NSArray+YYAdd.h"
@@ -60,7 +57,6 @@ FOUNDATION_EXPORT const unsigned char YYCategoriesVersionString[];
 #import "NSKeyedUnarchiver+YYAdd.h"
 #import "NSTimer+YYAdd.h"
 #import "NSBundle+YYAdd.h"
-#import "NSThread+YYAdd.h"
 #import "UIColor+YYAdd.h"
 #import "UIImage+YYAdd.h"
 #import "UIControl+YYAdd.h"
