@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<!--  参照这个plist写自己的,ImageName结尾自动添加normal和selected -->
+<array>
+	<dict>
+		<key>navBarTitle</key>
+		<string>首页</string>
+		<key>tabBarTitle</key>
+		<string>首页</string>
+		<key>tabBarImageName</key>
+		<string>tabbar_home</string>
+		<key>tabBarController</key>
+		<string>SCHomeController</string>
+	</dict>
+	<dict>
+		<key>navBarTitle</key>
+		<string>关联店铺</string>
+		<key>tabBarTitle</key>
+		<string>关联店铺</string>
+		<key>tabBarImageName</key>
+		<string>tabbar_subAccount</string>
+		<key>tabBarController</key>
+		<string>SCSubAccountController</string>
+	</dict>
+	<dict>
+		<key>navBarTitle</key>
+		<string>推广</string>
+		<key>tabBarTitle</key>
+		<string>推广</string>
+		<key>tabBarImageName</key>
+		<string>tabbar_promotion</string>
+		<key>tabBarController</key>
+		<string>SCPromotionController</string>
+	</dict>
+</array>
+</plist>

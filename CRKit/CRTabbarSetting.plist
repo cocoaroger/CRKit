@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   CRTabbaSetting.plist
+   CRKit
+
+   Created by roger wu on 06/07/2018.
+   Copyright (c) 2018 cocoaroger. All rights reserved.
+-->
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>navBarTitle</key>
+            <string>首页</string>
+            <key>tabBarTitle</key>
+            <string>首页</string>
+            <key>tabBarImageName</key>
+            <string>tabbar_home</string>
+            <key>tabBarController</key>
+            <string>CRTestController</string>
+        </dict>
+        <dict>
+            <key>navBarTitle</key>
+            <string>关联店铺</string>
+            <key>tabBarTitle</key>
+            <string>关联店铺</string>
+            <key>tabBarImageName</key>
+            <string>tabbar_subAccount</string>
+            <key>tabBarController</key>
+            <string>CRBaseController</string>
+        </dict>
+        <dict>
+            <key>navBarTitle</key>
+            <string>推广</string>
+            <key>tabBarTitle</key>
+            <string>推广</string>
+            <key>tabBarImageName</key>
+            <string>tabbar_promotion</string>
+            <key>tabBarController</key>
+            <string>CRBaseController</string>
+        </dict>
+    </array>
+</plist>
