@@ -14,7 +14,7 @@
 #import "UIButton+CRExtention.h"
 
 @interface CRWebViewController ()<
-    WKNavigationDelegate>
+WKNavigationDelegate>
 
 @property (copy, nonatomic) NSString *titleString;
 @property (nonatomic, copy) NSString *URL;
@@ -63,6 +63,7 @@
 
 - (void)dealloc {
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+    [self.webView removeObserver:self forKeyPath:@"canGoBack"];
 }
 
 - (void)setupWebView {
@@ -127,6 +128,7 @@
 #pragma mark - WKNavigationDelegate
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     WeakSelf;
+    [self.view cr_hiddenNodataView];
     [self.view cr_showNodataViewWithImage:nil text:@"加载失败,稍后重试" retryButtonTitle:@"刷新" retryButtonBlock:^{
         [weakSelf loadRequest];
     }];
@@ -171,7 +173,8 @@
         }
         [self.progressView setProgress:newValue animated:YES];
     } else if ([keyPath isEqualToString:@"canGoBack"]) {
-        _closeButton.hidden = ![self.webView canGoBack];
+        BOOL newValue = [change[NSKeyValueChangeNewKey] boolValue];
+        _closeButton.hidden = !newValue;
     }
 }
 

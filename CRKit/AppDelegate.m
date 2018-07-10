@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "CRTestController.h"
+#import "CRNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -20,7 +22,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    RootViewController *rootVC = [[RootViewController alloc] init];
+//    RootViewController *rooteVC = [RootViewController new];
+    CRNavigationController *rootVC = [[CRNavigationController alloc] initWithRootViewController:[CRTestController new]];
     self.window.rootViewController = rootVC;
     
     [self.window makeKeyAndVisible];

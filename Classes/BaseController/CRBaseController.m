@@ -28,6 +28,8 @@ static const CGFloat kButtonHeight = 44;
 @property (strong, nonatomic) UILabel *navTitleLabel;
 @property (assign, nonatomic) BOOL isEnabledPopGesture; // 返回手势是否可用
 
+@property (strong, nonatomic) UIImage *backImage;
+
 @end
 
 @implementation CRBaseController
@@ -35,13 +37,13 @@ static const CGFloat kButtonHeight = 44;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self setup];
+    [self baseSetup];
     
     // 默认配置
     self.statusBarStyle = CRStatusBarStyleDark;
     if (self.navigationController.viewControllers.count > 1) {
         self.isEnabledPopGesture = YES;
-        [self setLeftButtonImage:[UIImage imageNamed:@"CRImage.bundle/cr_back"]]; // 默认样式
+        [self setLeftButtonImage:self.backImage]; // 默认样式
         [self.navLeftButton mas_updateConstraints:^(MASConstraintMaker *make) {
             make.width.mas_equalTo(44);
         }];
@@ -129,6 +131,7 @@ static const CGFloat kButtonHeight = 44;
 
 - (void)setLeftButtonColor:(UIColor *)leftButtonColor {
     _leftButtonColor = leftButtonColor;
+    self.navLeftButton.tintColor = leftButtonColor;
     [self.navLeftButton cr_setTitleColor:leftButtonColor];
 }
 
@@ -153,6 +156,7 @@ static const CGFloat kButtonHeight = 44;
 
 - (void)setRightButtonColor:(UIColor *)rightButtonColor {
     _rightButtonColor = rightButtonColor;
+    self.navRightButton.tintColor = rightButtonColor;
     [self.navRightButton cr_setTitleColor:rightButtonColor];
 }
 
@@ -180,9 +184,9 @@ static const CGFloat kButtonHeight = 44;
 - (CGFloat)caculateItemWidth:(NSString *)itemTitle {
     NSDictionary *attriDic = @{NSFontAttributeName : kDefaultButtonTitleFont};
     CGRect strRect = [itemTitle boundingRectWithSize:CGSizeMake(kScreenWidth, 20)
-                                        options:NSStringDrawingUsesLineFragmentOrigin
-                                     attributes:attriDic
-                                        context:nil];
+                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                          attributes:attriDic
+                                             context:nil];
     CGFloat width = strRect.size.width;
     return width + 30;
 }
@@ -194,9 +198,8 @@ static const CGFloat kButtonHeight = 44;
 - (void)ApplicationWillResignActive {}
 
 #pragma mark - setup
-- (void)setup {
+- (void)baseSetup {
     [self.navigationController setNavigationBarHidden:YES];
-    
     [self setupNavigationBar];
     [self setupNotifications];
 }
@@ -323,6 +326,13 @@ static const CGFloat kButtonHeight = 44;
         [_navRightButton cr_setTitleColor:kDefaultButtonTitleColor];
     }
     return _navRightButton;
+}
+
+- (UIImage *)backImage {
+    if (!_backImage) {
+        _backImage = [[UIImage imageNamed:@"CRImage.bundle/cr_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    }
+    return _backImage;
 }
 
 - (void)didReceiveMemoryWarning {
