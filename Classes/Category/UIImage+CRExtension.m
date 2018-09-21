@@ -1,14 +1,14 @@
 //
-//  UIImage+CRExtention.m
+//  UIImage+CRExtension.m
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
 //  Copyright © 2016年 cocoaroger. All rights reserved.
 //
 
-#import "UIImage+CRExtention.h"
+#import "UIImage+CRExtension.h"
 
-@implementation UIImage (CRExtention)
+@implementation UIImage (CRExtension)
 
 - (instancetype)cr_imageWithAlpha:(CGFloat)alpha {
     UIGraphicsBeginImageContextWithOptions(self.size, NO, 0.0f);

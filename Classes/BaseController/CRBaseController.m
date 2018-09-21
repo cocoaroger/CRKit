@@ -10,13 +10,14 @@
 #import "CRNavigationController.h"
 #import "CRMacro.h"
 #import "Masonry.h"
-#import "UIButton+CRExtention.h"
+#import "UIButton+CRExtension.h"
+#import "YYCategories.h"
 
-#define kDefaultTitleFont [UIFont systemFontOfSize:20] // title的字体
+#define kDefaultTitleFont [UIFont boldSystemFontOfSize:18] // navTitle的字体
 #define kDefaultTitleColor rgba(51.f,51.f,51.f,1.f) // title的颜色
 
-#define kDefaultButtonTitleFont [UIFont systemFontOfSize:16]
-#define kDefaultButtonTitleColor rgba(51.f,51.f,51.f,1.f)
+#define kDefaultButtonTitleFont [UIFont systemFontOfSize:16] // 左右按钮的字体
+#define kDefaultButtonTitleColor UIColorHex(a0a0a0) // 左右按钮的颜色
 
 static const CGFloat kButtonWidth = 60;
 static const CGFloat kButtonHeight = 44;
@@ -174,7 +175,7 @@ static const CGFloat kButtonHeight = 44;
     if (self.navigationController) {
         [self.navigationController popViewControllerAnimated:YES];
     } else {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:NO completion:nil];
     }
 }
 
@@ -184,9 +185,9 @@ static const CGFloat kButtonHeight = 44;
 - (CGFloat)caculateItemWidth:(NSString *)itemTitle {
     NSDictionary *attriDic = @{NSFontAttributeName : kDefaultButtonTitleFont};
     CGRect strRect = [itemTitle boundingRectWithSize:CGSizeMake(kScreenWidth, 20)
-                                             options:NSStringDrawingUsesLineFragmentOrigin
-                                          attributes:attriDic
-                                             context:nil];
+                                        options:NSStringDrawingUsesLineFragmentOrigin
+                                     attributes:attriDic
+                                        context:nil];
     CGFloat width = strRect.size.width;
     return width + 30;
 }
@@ -312,6 +313,7 @@ static const CGFloat kButtonHeight = 44;
     if (!_navLeftButton) {
         _navLeftButton = [UIButton new];
         [_navLeftButton cr_setTitleColor:kDefaultButtonTitleColor];
+        _navLeftButton.tintColor = kDefaultButtonTitleColor;
         _navLeftButton.titleLabel.font = kDefaultButtonTitleFont;
         [_navLeftButton addTarget:self action:@selector(leftButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -321,16 +323,17 @@ static const CGFloat kButtonHeight = 44;
 - (UIButton *)navRightButton {
     if (!_navRightButton) {
         _navRightButton = [UIButton new];
-        [_navRightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
         _navRightButton.titleLabel.font = kDefaultButtonTitleFont;
         [_navRightButton cr_setTitleColor:kDefaultButtonTitleColor];
+        _navLeftButton.tintColor = kDefaultButtonTitleColor;
+        [_navRightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _navRightButton;
 }
 
 - (UIImage *)backImage {
     if (!_backImage) {
-        _backImage = [[UIImage imageNamed:@"CRImage.bundle/cr_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        _backImage = [[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     }
     return _backImage;
 }

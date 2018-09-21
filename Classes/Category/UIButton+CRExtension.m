@@ -1,17 +1,17 @@
 //
-//  UIButton+CRExtention.m
+//  UIButton+CRExtension.m
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
 //  Copyright © 2016年 cocoaroger. All rights reserved.
 //
 
-#import "UIButton+CRExtention.h"
-#import "UIImage+CRExtention.h"
+#import "UIButton+CRExtension.h"
+#import "UIImage+CRExtension.h"
 
 static const CGFloat kHighlightedAlpha = 0.6f;
 
-@implementation UIButton (CRExtention)
+@implementation UIButton (CRExtension)
 
 - (void)cr_setTitleColor:(UIColor *)color {
     [self setTitleColor:color forState:UIControlStateNormal];

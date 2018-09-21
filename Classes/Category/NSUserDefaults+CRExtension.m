@@ -1,16 +1,16 @@
 //
-//  NSUserDefaults+CRExtention.m
+//  NSUserDefaults+CRExtension.m
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
 //  Copyright © 2016年 cocoaroger. All rights reserved.
 //
 
-#import "NSUserDefaults+CRExtention.h"
+#import "NSUserDefaults+CRExtension.h"
 
 static NSString* const kOldAppVersionKey = @"kOldAppVersionKey";
 
-@implementation NSUserDefaults (CRExtention)
+@implementation NSUserDefaults (CRExtension)
 
 + (void)cr_saveObject:(id)object forKey:(NSString *)key {
     NSUserDefaults *defaults = [self standardUserDefaults];
@@ -35,8 +35,8 @@ static NSString* const kOldAppVersionKey = @"kOldAppVersionKey";
     return preferredLang;
 }
 
-+ (void)cr_launchControllerWithMainControllerBlock:(void (^)())mainControllerBlock
-                             launchControllerBlock:(void (^)())launchControllerBlock
++ (void)cr_launchControllerWithMainControllerBlock:(void (^)(void))mainControllerBlock
+                             launchControllerBlock:(void (^)(void))launchControllerBlock
                                  isShowNewFeatures:(BOOL)isShow {
     NSString *newVersion = [NSBundle mainBundle].infoDictionary[@"CFBundleShortVersionString"];
     NSString *oldVersion = [self cr_getObjectForKey:kOldAppVersionKey];

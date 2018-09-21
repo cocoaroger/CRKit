@@ -1,15 +1,15 @@
 //
-//  UIImageView+CRExtention.m
+//  UIImageView+CRExtension.m
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
 //  Copyright © 2016年 cocoaroger. All rights reserved.
 //
 
-#import "UIImageView+CRExtention.h"
+#import "UIImageView+CRExtension.h"
 //#import "UIImageView+WebCache.h"
 
-@implementation UIImageView (CRExtention)
+@implementation UIImageView (CRExtension)
 
 //- (void)cr_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder {
 //    __weak __typeof(&*self) weakSelf = self;

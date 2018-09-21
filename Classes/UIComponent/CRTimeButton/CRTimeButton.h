@@ -31,14 +31,21 @@
  *  重置按钮状态为`againTitle`
  */
 - (void)resetButton;
+/**
+ 验证通过后开始倒计时
+ */
+- (void)startTiming;
 @end
 
 @protocol CRTimeButtonDelegate <NSObject>
 /**
  *  点击按钮回调,可在这个回调方法中发出网络请求
- *
- *  @param timeButton 按钮
  */
 - (void)timeButtonClicked:(CRTimeButton *)timeButton;
+
+/**
+ 倒计时结束回调
+ */
+- (void)timeButtonTimeout:(CRTimeButton *)timeButton;
 
 @end

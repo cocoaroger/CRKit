@@ -11,10 +11,10 @@
 #import "Masonry.h"
 #import "CRMacro.h"
 #import "UIView+CRExtension.h"
-#import "UIButton+CRExtention.h"
+#import "UIButton+CRExtension.h"
+#import "YYCategories.h"
 
-@interface CRWebViewController ()<
-WKNavigationDelegate>
+@interface CRWebViewController ()<WKNavigationDelegate>
 
 @property (copy, nonatomic) NSString *titleString;
 @property (nonatomic, copy) NSString *URL;
@@ -64,6 +64,7 @@ WKNavigationDelegate>
 - (void)dealloc {
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
     [self.webView removeObserver:self forKeyPath:@"canGoBack"];
+    [self.webView removeObserver:self forKeyPath:@"title"];
 }
 
 - (void)setupWebView {
@@ -81,16 +82,22 @@ WKNavigationDelegate>
     [webView addObserver:self forKeyPath:@"canGoBack"
                  options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
                  context:nil];
+    [webView addObserver:self forKeyPath:@"title"
+                 options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
+                 context:nil];
 }
 
 - (void)setupNavButton {
+    UIColor *buttonColor = rgba(51.f,51.f,51.f,1.f);
+    
     [self setLeftButtonTitle:@"返回"];
     [self setLeftButtonImage:[UIImage imageNamed:@"CRImage.bundle/cr_back"]];
+    self.leftButtonColor = buttonColor;
     
     _closeButton = [UIButton new];
-    [_closeButton cr_setTitleColor:rgba(51.f,51.f,51.f,1.f)];
     _closeButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_closeButton setTitle:@"关闭" forState:UIControlStateNormal];
+    [_closeButton cr_setTitleColor:buttonColor];
     [_closeButton addTarget:self action:@selector(closeButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationBar addSubview:_closeButton];
     
@@ -175,6 +182,11 @@ WKNavigationDelegate>
     } else if ([keyPath isEqualToString:@"canGoBack"]) {
         BOOL newValue = [change[NSKeyValueChangeNewKey] boolValue];
         _closeButton.hidden = !newValue;
+    } else if ([keyPath isEqualToString:@"title"]) {
+        if (_titleString == nil) {
+            _titleString = change[NSKeyValueChangeNewKey];
+            self.navTitle = _titleString;
+        }
     }
 }
 

@@ -80,18 +80,21 @@ static NSString * const kDefaultAgainTitle = @"重新发送";
 
 - (void)timeButtonAction:(CRTimeButton *)timeButton {
     if ([self.delegate respondsToSelector:@selector(timeButtonClicked:)]) {
-        _timeCount = _duration;
-        _timer = [NSTimer scheduledTimerWithTimeInterval:1
-                                                  target:self
-                                                selector:@selector(timeCounting)
-                                                userInfo:nil
-                                                 repeats:YES];
-        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
-        [self timeCounting];
         [self.delegate timeButtonClicked:self];
     } else {
         NSAssert(NO, @"必须设置代理方法才可用!");
     }
+}
+
+- (void)startTiming {
+    _timeCount = _duration;
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                              target:self
+                                            selector:@selector(timeCounting)
+                                            userInfo:nil
+                                             repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    [self timeCounting];
 }
 
 - (void)timeCounting {
@@ -104,6 +107,9 @@ static NSString * const kDefaultAgainTitle = @"重新发送";
         [self setTitle:_againTitle forState:UIControlStateNormal];
         self.enabled = YES;
         [self invalidateTimer];
+        if ([self.delegate respondsToSelector:@selector(timeButtonTimeout:)]) {
+            [self.delegate timeButtonTimeout:self];
+        }
     }
 }
 

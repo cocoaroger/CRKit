@@ -21,10 +21,12 @@ static const CGFloat kLabelFont = 16.f;
     [hud hideAnimated:YES afterDelay:kShowTime];
     
     hud.mode = MBProgressHUDModeText;
+    hud.label.numberOfLines = 0;
     hud.label.text = text;
     hud.label.font = [UIFont boldSystemFontOfSize:kLabelFont];
     hud.contentColor = [UIColor whiteColor];
-    hud.bezelView.color = [[UIColor blackColor] colorWithAlphaComponent:0.9f];
+    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+    hud.bezelView.color = [[UIColor blackColor] colorWithAlphaComponent:0.8f];
     hud.minSize = CGSizeMake(100.f, 40.f);
     hud.margin = 10.f;
     
@@ -43,10 +45,10 @@ static const CGFloat kLabelFont = 16.f;
     hud.label.text = text;
     hud.label.font = [UIFont boldSystemFontOfSize:kLabelFont];
     hud.contentColor = [UIColor whiteColor];
-    hud.bezelView.color = [[UIColor blackColor] colorWithAlphaComponent:0.9f];
+    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+    hud.bezelView.color = [[UIColor blackColor] colorWithAlphaComponent:0.8f];
     hud.margin = 20.f;
     hud.removeFromSuperViewOnHide = YES;
-    
     
     return hud;
 }

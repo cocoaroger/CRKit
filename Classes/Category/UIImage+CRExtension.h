@@ -1,5 +1,5 @@
 //
-//  UIImage+CRExtention.h
+//  UIImage+CRExtension.h
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (CRExtention)
+@interface UIImage (CRExtension)
 
 /**
  *  创建与该图片相同的带有透明度的图片

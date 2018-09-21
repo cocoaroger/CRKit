@@ -8,15 +8,16 @@
 
 #import "CRTabBarItem.h"
 #import "CRMacro.h"
+#import "YYCategories.h"
 
 // titleLable和imageView的所占比例
 #define kTabBarButtonItemRadio 0.7
 // titleLabel的字体大小
 #define kTabBarButtonItemFontSize 12.0
 // 默认文字颜色
-#define kTabBarButtonItemTitleColor rgb(138.0f, 138.0f, 138.0f)
+#define kTabBarButtonItemTitleColor UIColorHex(a1a1a1)
 // 选中文字颜色
-#define kTabBarButtonItemTitleSelectedColor rgb(51.f, 51.f, 51.f)
+#define kTabBarButtonItemTitleSelectedColor UIColorHex(2d2f49)
 // 右上角消息数View的背景颜色
 #define kTabBarBadgeViewColor rgb(255.0f, 139.0f, 0.0f)
 // 右上角消息数View的字体大小

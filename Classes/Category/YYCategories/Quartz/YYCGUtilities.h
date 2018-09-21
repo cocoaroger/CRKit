@@ -26,10 +26,10 @@ CGContextRef _Nullable YYCGContextCreateGrayBitmapContext(CGSize size, CGFloat s
 
 
 /// Get main screen's scale.
-CGFloat YYScreenScale();
+CGFloat YYScreenScale(void);
 
 /// Get main screen's size. Height is always larger than width.
-CGSize YYScreenSize();
+CGSize YYScreenSize(void);
 
 
 
@@ -107,7 +107,7 @@ NSString *YYUIViewContentModeToCAGravity(UIViewContentMode contentMode);
 
 
 /**
- Returns a rectangle to fit the @param rect with specified content mode.
+ Returns a rectangle to fit the rect with specified content mode.
  
  @param rect The constrant rect
  @param size The content size

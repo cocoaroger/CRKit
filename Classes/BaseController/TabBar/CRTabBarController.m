@@ -69,6 +69,7 @@
  */
 - (void)setupTabBar {
     CRTabBar *customTabBar = [[CRTabBar alloc] init];
+    customTabBar.backgroundColor = [UIColor whiteColor];
     customTabBar.frame = self.tabBar.bounds;
     customTabBar.delegate = self;
     [self.tabBar addSubview:customTabBar];

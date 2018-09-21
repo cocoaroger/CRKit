@@ -9,13 +9,27 @@
 #import "UIView+CRExtension.h"
 #import "Masonry.h"
 #import "CRMacro.h"
-#import "UIButton+CRExtention.h"
+#import "UIButton+CRExtension.h"
 #import "UIControl+YYAdd.h"
+#import "NSString+CRExtention.h"
 
 static const NSInteger kNodataViewTag = 10000;
 static const CGFloat kNodataViewMaxW = 300.f;
 
 @implementation UIView (CRExtension)
+
+- (UIScreenEdgePanGestureRecognizer *)cr_screenEdgePanGestureRecognizer {
+    UIScreenEdgePanGestureRecognizer *screenEdgePanGestureRecognizer = nil;
+    if (self.gestureRecognizers.count > 0) {
+        for (UIGestureRecognizer *recognizer in self.gestureRecognizers) {
+            if ([recognizer isKindOfClass: [UIScreenEdgePanGestureRecognizer class]]) {
+                screenEdgePanGestureRecognizer = (UIScreenEdgePanGestureRecognizer *)recognizer;
+                break;
+            }
+        }
+    }
+    return screenEdgePanGestureRecognizer;
+}
 
 - (void)cr_showNodataViewWithImage:(UIImage *)image
                               text:(NSString *)text
@@ -77,6 +91,8 @@ static const CGFloat kNodataViewMaxW = 300.f;
         make.bottom.equalTo(nodataView.mas_bottom);
         make.centerX.equalTo(nodataView.mas_centerX);;
     }];
+    
+    retryButton.hidden = ![retryButtonTitle cr_hasValue];
 }
 
 - (void)cr_hiddenNodataView {
@@ -84,6 +100,101 @@ static const CGFloat kNodataViewMaxW = 300.f;
     if (nodataView) {
         [nodataView removeFromSuperview];
     }
+}
+
+- (void)cr_makeEqualWidthViews:(NSArray *)views padding:(CGFloat)padding {
+    UIView *lastView;
+    for (UIView *view in views) {
+        [self addSubview:view];
+        if (lastView) {
+            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.bottom.equalTo(self);
+                make.left.equalTo(lastView.mas_right).offset(padding);
+                make.width.equalTo(lastView);
+            }];
+        } else {
+            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.equalTo(self).offset(padding);
+                make.top.bottom.equalTo(self);
+            }];
+        }
+        lastView = view;
+    }
+    [lastView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self).offset(-padding);
+    }];
+}
+
++ (UIView *)cr_makeLineView {
+    UIView *view = [UIView new];
+    view.backgroundColor = kSeparatorLineColor;
+    return view;
+}
+
+- (void)cr_addBlurEffect {
+    // 模糊
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+    UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    [self addSubview:blurView];
+    
+    __weak __typeof(&*self) weakSelf = self;
+    [blurView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(weakSelf);
+    }];
+}
+
++ (void)cr_drawVerticalDashLine:(UIView *)lineView lineWidth:(CGFloat)lineWidth lineSpacing:(CGFloat)lineSpacing lineColor:(UIColor *)lineColor {
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    [shapeLayer setBounds:lineView.bounds];
+    [shapeLayer setPosition:CGPointMake(CGRectGetWidth(lineView.frame) / 2, CGRectGetHeight(lineView.frame) / 2)];
+    [shapeLayer setFillColor:[UIColor clearColor].CGColor];
+    //  设置虚线颜色
+    [shapeLayer setStrokeColor:lineColor.CGColor];
+    //  设置虚线宽度
+    [shapeLayer setLineWidth:CGRectGetWidth(lineView.frame)];
+    [shapeLayer setLineJoin:kCALineJoinRound];
+    //  设置线宽，线间距
+    [shapeLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:lineWidth], [NSNumber numberWithInt:lineSpacing], nil]];
+    //  设置路径
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL, 0, 0);
+    CGPathAddLineToPoint(path, NULL,0, CGRectGetHeight(lineView.frame));
+    [shapeLayer setPath:path];
+    CGPathRelease(path);
+    //  把绘制好的虚线添加上来
+    [lineView.layer addSublayer:shapeLayer];
+}
+
++ (void)cr_drawHorizontalDashLine:(UIView *)lineView lineWidth:(CGFloat)lineWidth lineSpacing:(CGFloat)lineSpacing lineColor:(UIColor *)lineColor {
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    [shapeLayer setBounds:lineView.bounds];
+    [shapeLayer setPosition:CGPointMake(CGRectGetWidth(lineView.frame) / 2, CGRectGetHeight(lineView.frame) / 2)];
+    [shapeLayer setFillColor:[UIColor clearColor].CGColor];
+    //  设置虚线颜色
+    [shapeLayer setStrokeColor:lineColor.CGColor];
+    //  设置虚线宽度
+    [shapeLayer setLineWidth:CGRectGetHeight(lineView.frame)];
+    [shapeLayer setLineJoin:kCALineJoinRound];
+    //  设置线宽，线间距
+    [shapeLayer setLineDashPattern:[NSArray arrayWithObjects:[NSNumber numberWithInt:lineWidth], [NSNumber numberWithInt:lineSpacing], nil]];
+    //  设置路径
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL, 0, 0);
+    CGPathAddLineToPoint(path, NULL, CGRectGetWidth(lineView.frame), 0);
+    [shapeLayer setPath:path];
+    CGPathRelease(path);
+    //  把绘制好的虚线添加上来
+    [lineView.layer addSublayer:shapeLayer];
+}
+
+- (void)cr_addCorners:(UIRectCorner)corners withRadius:(CGFloat)radius {
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds
+                                                  byRoundingCorners:corners
+                                                        cornerRadii:CGSizeMake(radius, radius)];
+    CAShapeLayer *shape = [[CAShapeLayer alloc] init];
+    shape.frame = self.bounds;
+    shape.path = path.CGPath;
+    self.layer.mask = shape;
 }
 
 @end

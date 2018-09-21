@@ -36,8 +36,8 @@
 
 + (BOOL)hasPhotoAuthorization {
     PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
-    if (status == PHAuthorizationStatusRestricted ||
-        status == PHAuthorizationStatusDenied) {
+    if (status == PHAuthorizationStatusRestricted || // 家庭权限
+        status == PHAuthorizationStatusDenied) { // 不允许
         return NO;
     }
     return YES;

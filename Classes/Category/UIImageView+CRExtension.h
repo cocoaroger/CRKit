@@ -1,5 +1,5 @@
 //
-//  UIImageView+CRExtention.h
+//  UIImageView+CRExtension.h
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
@@ -11,7 +11,7 @@
 /**
  项目不一样，可以参照这个写法
  */
-@interface UIImageView (CRExtention)
+@interface UIImageView (CRExtension)
 
 /**
  *  设置图片,添加一个渐显动画

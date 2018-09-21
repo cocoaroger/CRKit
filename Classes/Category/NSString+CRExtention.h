@@ -1,5 +1,5 @@
 //
-//  NSString+CRExtention.h
+//  NSString+CRExtension.h
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
@@ -62,11 +62,33 @@
 - (BOOL)cr_matchWithRegex:(NSString *)regex;
 
 /**
+ 判断是否特殊字符
+
+ @return YES 是， NO 不是
+ */
+- (BOOL)cr_isSpecialLetter;
+
+/**
  *  判断是否是邮箱
  *
  *  @return YES表示正确，NO表示错误
  */
 - (BOOL)cr_isEmailAddress;
+
+/**
+ 是否职业
+ */
+- (BOOL)cr_isWork;
+
+/**
+ 是否昵称
+ */
+- (BOOL)cr_isNickName;
+
+/**
+ *  判断是否是中文字符
+ */
+- (BOOL)cr_isChineseLetter;
 
 /**
  *  判断是否是字母

@@ -1,5 +1,5 @@
 //
-//  UITextField+CRExtention.h
+//  UITextField+CRExtension.h
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITextField (CRExtention)
+@interface UITextField (CRExtension)
 
 /**
  *  设置带默认的占位文字和颜色

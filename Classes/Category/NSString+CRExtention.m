@@ -1,5 +1,5 @@
 //
-//  NSString+CRExtention.m
+//  NSString+CRExtension.m
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
@@ -30,24 +30,10 @@
 - (void)cr_callPhoneWithSourceView:(UIView *)sourceView sourceRect:(CGRect)sourceRect {
     NSString *phoneString = [NSString stringWithFormat:@"tel://%@", self];
     NSURL *telPhoneURL = [NSURL URLWithString:phoneString];
-    
     UIViewController *currentVC = [UIViewController cr_currentViewController];
-    if (iOS10) {
-        [UIAlertController showActionSheetInViewController:currentVC
-                                                 withTitle:nil
-                                                   message:nil
-                                         cancelButtonTitle:@"取消"
-                                    destructiveButtonTitle:nil
-                                         otherButtonTitles:@[self]
-                        popoverPresentationControllerBlock:^(UIPopoverPresentationController *popover){
-                            popover.sourceView = sourceView;
-                            popover.sourceRect = sourceRect;
-                        }
-                                                  tapBlock:^(UIAlertController * _Nonnull controller, UIAlertAction * _Nonnull action, NSInteger buttonIndex) {
-                                                      if (buttonIndex == 2) {
-                                                          [[UIApplication sharedApplication] openURL:telPhoneURL options:@{} completionHandler:nil];
-                                                      }
-                                                  }];
+    
+    if (@available(iOS 10.0, *)) {
+        [[UIApplication sharedApplication] openURL:telPhoneURL options:@{} completionHandler:nil];
     } else {
         UIWebView *webView = [[UIWebView alloc] init];
         [webView loadRequest:[NSURLRequest requestWithURL:telPhoneURL]];
@@ -72,9 +58,28 @@
     return [test evaluateWithObject:self];
 }
 
+- (BOOL)cr_isSpecialLetter {
+    return [self cr_matchWithRegex:@"[`~!@#$%^&*()_\\-+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]"];
+}
+
 - (BOOL)cr_isEmailAddress {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     return [self cr_matchWithRegex:emailRegex];
+}
+
+- (BOOL)cr_isWork {
+    NSString *regex = @"^[a-zA-Z\u4e00-\u9fa5]*$";
+    return [self cr_matchWithRegex:regex];
+}
+
+- (BOOL)cr_isNickName {
+    NSString *regex = @"^[a-zA-Z\u4e00-\u9fa50-9]*$";
+    return [self cr_matchWithRegex:regex];
+}
+
+- (BOOL)cr_isChineseLetter {
+    NSString *regex = @"^[\u4e00-\u9fa5]*$";
+    return [self cr_matchWithRegex:regex];
 }
 
 - (BOOL)cr_isLetter {

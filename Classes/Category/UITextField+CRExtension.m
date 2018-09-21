@@ -1,14 +1,14 @@
 //
-//  UITextField+CRExtention.m
+//  UITextField+CRExtension.m
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
 //  Copyright © 2016年 cocoaroger. All rights reserved.
 //
 
-#import "UITextField+CRExtention.h"
+#import "UITextField+CRExtension.h"
 
-@implementation UITextField (CRExtention)
+@implementation UITextField (CRExtension)
 
 - (void)cr_setPlaceholder:(NSString *)placeholder color:(UIColor *)color {
     NSDictionary *attributes = @{NSForegroundColorAttributeName: color};

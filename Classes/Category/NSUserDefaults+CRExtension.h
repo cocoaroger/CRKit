@@ -1,5 +1,5 @@
 //
-//  NSUserDefaults+CRExtention.h
+//  NSUserDefaults+CRExtension.h
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSUserDefaults (CRExtention)
+@interface NSUserDefaults (CRExtension)
 /**
  *  保存对象到NSUserDefaults
  *
@@ -47,7 +47,7 @@
  *  @param launchControllerBlock 加载LaunchController的代码
  *  @param isShow                如果版本不同，是否还是显示Launch
  */
-+ (void)cr_launchControllerWithMainControllerBlock:(void (^)())mainControllerBlock
-                             launchControllerBlock:(void (^)())launchControllerBlock
++ (void)cr_launchControllerWithMainControllerBlock:(void (^)(void))mainControllerBlock
+                             launchControllerBlock:(void (^)(void))launchControllerBlock
                                  isShowNewFeatures:(BOOL)isShow;
 @end

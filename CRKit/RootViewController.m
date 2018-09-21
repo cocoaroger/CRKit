@@ -10,16 +10,13 @@
 #import "CRTimeButton.h"
 #import "Masonry.h"
 #import "RMUniversalAlert.h"
-#import "IMYWebView.h"
 #import "CRTabBarController.h"
 
 @interface RootViewController ()<
-    CRTimeButtonDelegate,
-    IMYWebViewDelegate>
+    CRTimeButtonDelegate>
 
 @property (nonatomic, weak) CRTimeButton *timeButton;
 @property (nonatomic, weak) UIButton *testAlertButton;
-@property (nonatomic, weak) IMYWebView *webView;
 @property (strong, nonatomic) UIButton *toTabbarButton;
 @end
 
@@ -31,7 +28,6 @@
     
     [self setupTimeButton];
     [self setupAlertButton];
-    [self setupWebView];
     [self setupTabButton];
 }
 
@@ -100,26 +96,6 @@
                                        }];
 }
 
-/**
- *  测试兼容WKWebView和UIWebView
- */
-- (void)setupWebView {
-    IMYWebView *webView = [[IMYWebView alloc] init];
-    webView.delegate = self;
-    [self.view addSubview:webView];
-    _webView = webView;
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.tmall.com"]];
-    [webView loadRequest:request];
-    
-    __weak __typeof(&*self) weakSelf = self;
-    [webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(weakSelf.view.mas_width);
-        make.height.mas_equalTo(200.f);
-        make.top.equalTo(weakSelf.testAlertButton.mas_bottom).offset(20.f);
-    }];
-}
-
 - (void)setupTabButton {
     UIButton *button = [UIButton new];
     [button setBackgroundColor:[UIColor blackColor]];
@@ -131,7 +107,7 @@
     
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_centerX);
-        make.top.equalTo(self.webView.mas_bottom);
+        make.top.mas_equalTo(200);
     }];
 }
 

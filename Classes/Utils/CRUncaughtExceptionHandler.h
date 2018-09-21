@@ -23,4 +23,4 @@
 /**
  *  监听系统崩溃信息
  */
-void InstallUncaughtExceptionHandler();
+void InstallUncaughtExceptionHandler(void);

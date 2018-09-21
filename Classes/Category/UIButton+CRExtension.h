@@ -1,5 +1,5 @@
 //
-//  UIButton+CRExtention.h
+//  UIButton+CRExtension.h
 //  CRKit
 //
 //  Created by roger wu on 16/7/14.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIButton (CRExtention)
+@interface UIButton (CRExtension)
 
 /**
  *  设置按钮title的普通状态颜色，同时将hilight和disabled设置为该颜色的半透明颜色
