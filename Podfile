@@ -3,16 +3,30 @@ platform :ios, '8.0'
 inhibit_all_warnings!
 
 target 'CRKit' do
+    
     pod 'AFNetworking'
     pod 'IQKeyboardManager'
     pod 'MJExtension'
     pod 'MJRefresh'
-    pod 'ReactiveCocoa'
-    pod 'SDWebImage'
+    
+    pod 'YYCache'
+    pod 'YYImage'
+    pod 'YYWebImage'
     pod 'YYText'
-#下面这些不是推荐用的#
+    pod 'YYModel'
+    
+    pod 'SDCycleScrollView'
+    pod 'UIAlertController+Blocks'
+    pod 'WMPageController'
+    pod 'HMSegmentedControl'
+    pod 'iCarousel'
+    pod 'SKTagView'
+    pod 'MGSwipeTableCell'
+    pod 'LFImagePickerController'
+    
     pod 'PinYin4Objc'
-    pod 'RMUniversalAlert'
-    pod 'pop', :git => 'https://github.com/facebook/pop.git'
-    pod 'SDCycleScrollView', :git => 'https://github.com/gsdios/SDCycleScrollView.git'
+    pod 'pop'
+    pod 'Aspects'
+    pod 'FCModel'
+    
 end

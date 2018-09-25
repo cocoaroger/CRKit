@@ -9,8 +9,8 @@
 #import "RootViewController.h"
 #import "CRTimeButton.h"
 #import "Masonry.h"
-#import "RMUniversalAlert.h"
 #import "CRTabBarController.h"
+#import "CRKit.h"
 
 @interface RootViewController ()<
     CRTimeButtonDelegate>
@@ -79,21 +79,21 @@
 }
 
 - (void)testAlert {
-    [RMUniversalAlert showAlertInViewController:self
-                                      withTitle:@"Test Alert"
-                                        message:@"Test Message"
-                              cancelButtonTitle:@"Cancel"
-                         destructiveButtonTitle:@"Delete"
-                              otherButtonTitles:nil
-                                       tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
-                                           if (buttonIndex == alert.cancelButtonIndex) {
-                                               NSLog(@"Cancel Tapped");
-                                           } else if (buttonIndex == alert.destructiveButtonIndex) {
-                                               NSLog(@"Delete Tapped");
-                                           } else if (buttonIndex >= alert.firstOtherButtonIndex) {
-                                               NSLog(@"Other Button Index %ld", (long)buttonIndex - alert.firstOtherButtonIndex);
-                                           }
-                                       }];
+    [UIAlertController showAlertInViewController:self
+                                       withTitle:@"Test Alert"
+                                         message:@"Test Message"
+                               cancelButtonTitle:@"Cancel"
+                          destructiveButtonTitle:@"Delete"
+                               otherButtonTitles:nil
+                                        tapBlock:^(UIAlertController * _Nonnull controller, UIAlertAction * _Nonnull action, NSInteger buttonIndex) {
+                                            if (buttonIndex == controller.cancelButtonIndex) {
+                                                NSLog(@"Cancel Tapped");
+                                            } else if (buttonIndex == controller.destructiveButtonIndex) {
+                                                NSLog(@"Delete Tapped");
+                                            } else if (buttonIndex >= controller.firstOtherButtonIndex) {
+                                                NSLog(@"Other Button Index %ld", (long)buttonIndex - controller.firstOtherButtonIndex);
+                                            }
+                                        }];
 }
 
 - (void)setupTabButton {
