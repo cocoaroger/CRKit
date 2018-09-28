@@ -1,9 +1,9 @@
 //
 //  CRUncaughtExceptionHandler.h
-//  SCSupplier
+//  CRKit
 //
 //  Created by roger wu on 2016/10/12.
-//  Copyright © 2016年 isoubu. All rights reserved.
+//  Copyright © 2016年 cocoaroger. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -1,9 +1,9 @@
 //
 //  UILabel+CRExtension.h
-//  和路通
+//  CRKit
 //
 //  Created by roger wu on 18/07/2018.
-//  Copyright © 2018 asiainfo. All rights reserved.
+//  Copyright © 2018 cocoaroger. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

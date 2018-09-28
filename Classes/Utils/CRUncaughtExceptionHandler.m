@@ -1,9 +1,9 @@
 //
 //  CRUncaughtExceptionHandler.m
-//  SCSupplier
+//  CRKit
 //
 //  Created by roger wu on 2016/10/12.
-//  Copyright © 2016年 isoubu. All rights reserved.
+//  Copyright © 2016年 cocoaroger. All rights reserved.
 //
 
 #import "CRUncaughtExceptionHandler.h"
@@ -42,7 +42,7 @@
                                                
                                                MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
                                                mailVC.mailComposeDelegate = handler;
-                                               [mailVC setToRecipients:@[@"wuxuanqiang@isoubu.com"]];
+                                               [mailVC setToRecipients:@[@"wuxuanqiang@cocoaroger.com"]];
                                                [mailVC setSubject:@"供应商管理崩溃报告"];
                                                [mailVC setMessageBody:message isHTML:NO];
                                                [rootViewController presentViewController:mailVC animated:YES completion:nil];

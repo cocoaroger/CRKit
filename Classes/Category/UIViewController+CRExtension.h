@@ -1,9 +1,9 @@
 //
 //  UIViewController+CRExtension.h
-//  SCSupplier
+//  CRKit
 //
 //  Created by roger wu on 2016/11/18.
-//  Copyright © 2016年 isoubu. All rights reserved.
+//  Copyright © 2016年 cocoaroger. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

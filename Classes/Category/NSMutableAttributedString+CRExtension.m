@@ -1,9 +1,9 @@
 //
 //  NSMutableAttributedString+CRExtension.m
-//  和路通
+//  CRKit
 //
 //  Created by roger wu on 01/09/2018.
-//  Copyright © 2018 asiainfo. All rights reserved.
+//  Copyright © 2018 cocoaroger. All rights reserved.
 //
 
 #import "NSMutableAttributedString+CRExtension.h"

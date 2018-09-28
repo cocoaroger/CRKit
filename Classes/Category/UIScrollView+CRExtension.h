@@ -1,6 +1,6 @@
 //
 //  UIScrollView+CRExtension.h
-//  SearchCloth
+//  CRKit
 //
 //  Created by roger wu on 04/07/2017.
 //  Copyright © 2017 cocoaroger. All rights reserved.
