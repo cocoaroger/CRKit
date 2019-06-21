@@ -49,6 +49,11 @@
                                         context:nil];
     return strRect;
 }
+
+- (NSString *)cr_queryURLEncode {
+    return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+}
+
 @end
 
 @implementation NSString (CRValidate)

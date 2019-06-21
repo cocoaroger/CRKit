@@ -84,6 +84,10 @@
 		DBA60FCF20F2FECD002E5FCC /* CRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA60FCD20F2FECD002E5FCC /* CRWebViewController.m */; };
 		DBA60FD120F307A6002E5FCC /* CRImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DBA60FD020F307A5002E5FCC /* CRImage.bundle */; };
 		DBDD527B1D37983000650D6A /* CRKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = DBDD527A1D37983000650D6A /* CRKit.podspec */; };
+		DBF8BB4622BCAA2200411054 /* CRScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF8BB4522BCAA2200411054 /* CRScrollView.m */; };
+		DBF8BB4A22BCAA6E00411054 /* CRDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF8BB4922BCAA6E00411054 /* CRDatePickerView.m */; };
+		DBF8BB4E22BCAA8700411054 /* CRNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF8BB4D22BCAA8700411054 /* CRNotificationView.m */; };
+		DBF8BB5222BCAA9900411054 /* CRPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF8BB5122BCAA9900411054 /* CRPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -243,6 +247,14 @@
 		DBA60FCE20F2FECD002E5FCC /* CRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRWebViewController.h; sourceTree = "<group>"; };
 		DBA60FD020F307A5002E5FCC /* CRImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CRImage.bundle; sourceTree = "<group>"; };
 		DBDD527A1D37983000650D6A /* CRKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CRKit.podspec; sourceTree = "<group>"; };
+		DBF8BB4422BCAA2200411054 /* CRScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRScrollView.h; sourceTree = "<group>"; };
+		DBF8BB4522BCAA2200411054 /* CRScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRScrollView.m; sourceTree = "<group>"; };
+		DBF8BB4822BCAA6E00411054 /* CRDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRDatePickerView.h; sourceTree = "<group>"; };
+		DBF8BB4922BCAA6E00411054 /* CRDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRDatePickerView.m; sourceTree = "<group>"; };
+		DBF8BB4C22BCAA8700411054 /* CRNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNotificationView.h; sourceTree = "<group>"; };
+		DBF8BB4D22BCAA8700411054 /* CRNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNotificationView.m; sourceTree = "<group>"; };
+		DBF8BB5022BCAA9900411054 /* CRPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRPickerView.h; sourceTree = "<group>"; };
+		DBF8BB5122BCAA9900411054 /* CRPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRPickerView.m; sourceTree = "<group>"; };
 		F5296177818031174D9BBC81 /* Pods-CRKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRKit/Pods-CRKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -330,6 +342,10 @@
 		DB64E10720EF090300B931B6 /* UIComponent */ = {
 			isa = PBXGroup;
 			children = (
+				DBF8BB4F22BCAA9900411054 /* CRPickerView */,
+				DBF8BB4B22BCAA8700411054 /* CRNotificationView */,
+				DBF8BB4722BCAA6E00411054 /* CRDatePickerView */,
+				DBF8BB4322BCAA2200411054 /* CRScrollView */,
 				DB64E11120EF0F7100B931B6 /* CRTimeButton */,
 			);
 			path = UIComponent;
@@ -573,6 +589,45 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		DBF8BB4322BCAA2200411054 /* CRScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				DBF8BB4422BCAA2200411054 /* CRScrollView.h */,
+				DBF8BB4522BCAA2200411054 /* CRScrollView.m */,
+			);
+			name = CRScrollView;
+			path = "../../../../../../Desktop/亚信-projects/和路通/和路通新版代码/CMCC_IOV_iOS/和路通/Classes/Common/Vender/CRKit/UIComponent/CRScrollView";
+			sourceTree = "<group>";
+		};
+		DBF8BB4722BCAA6E00411054 /* CRDatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				DBF8BB4822BCAA6E00411054 /* CRDatePickerView.h */,
+				DBF8BB4922BCAA6E00411054 /* CRDatePickerView.m */,
+			);
+			path = CRDatePickerView;
+			sourceTree = "<group>";
+		};
+		DBF8BB4B22BCAA8700411054 /* CRNotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				DBF8BB4C22BCAA8700411054 /* CRNotificationView.h */,
+				DBF8BB4D22BCAA8700411054 /* CRNotificationView.m */,
+			);
+			name = CRNotificationView;
+			path = "../../../../../../Desktop/亚信-projects/和路通/和路通新版代码/CMCC_IOV_iOS/和路通/Classes/Common/Vender/CRKit/UIComponent/CRNotificationView";
+			sourceTree = "<group>";
+		};
+		DBF8BB4F22BCAA9900411054 /* CRPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				DBF8BB5022BCAA9900411054 /* CRPickerView.h */,
+				DBF8BB5122BCAA9900411054 /* CRPickerView.m */,
+			);
+			name = CRPickerView;
+			path = "../../../../../../Desktop/亚信-projects/和路通/和路通新版代码/CMCC_IOV_iOS/和路通/Classes/Common/Vender/CRKit/UIComponent/CRPickerView";
+			sourceTree = "<group>";
+		};
 		E36621B38EA076FC7028BE49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,7 +672,7 @@
 				TargetAttributes = {
 					DB6F25691D3729FF00B6CA60 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = FAUZYDV99Z;
+						DevelopmentTeam = 7JGV58DRAE;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -627,6 +682,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -679,20 +735,22 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CRKit/Pods-CRKit-resources.sh",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyBoardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-CRKit/Pods-CRKit-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/LFImagePickerController/LFImagePickerController/LFImagePickerController/class/LFImagePickerController.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/PinYin4Objc/PinYin4Objc/Resources/unicode_to_hanyu_pinyin.txt",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LFImagePickerController.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/unicode_to_hanyu_pinyin.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CRKit/Pods-CRKit-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CRKit/Pods-CRKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BA89344F5A20583A1797D747 /* [CP] Check Pods Manifest.lock */ = {
@@ -746,6 +804,7 @@
 				DB24001B2154E1F600E48101 /* NSUserDefaults+CRExtension.m in Sources */,
 				DBA60F8F20F2F717002E5FCC /* MBProgressHUD+CRExtension.m in Sources */,
 				DBA60FB020F2F87E002E5FCC /* MASLayoutConstraint.m in Sources */,
+				DBF8BB4A22BCAA6E00411054 /* CRDatePickerView.m in Sources */,
 				DB2400192154E1F600E48101 /* UITextField+CRExtension.m in Sources */,
 				DBA60F8C20F2F6D8002E5FCC /* MBProgressHUD.m in Sources */,
 				DBA60F7120F2F2F0002E5FCC /* UIScrollView+YYAdd.m in Sources */,
@@ -753,6 +812,7 @@
 				DBA60DC820EF58AB002E5FCC /* CRTestController.m in Sources */,
 				DB6F25721D3729FF00B6CA60 /* AppDelegate.m in Sources */,
 				DBA60F8820F2F2F0002E5FCC /* CALayer+YYAdd.m in Sources */,
+				DBF8BB4622BCAA2200411054 /* CRScrollView.m in Sources */,
 				DBA60F6C20F2F2F0002E5FCC /* UIBezierPath+YYAdd.m in Sources */,
 				DB24001F2154E1F600E48101 /* UIImage+CRExtension.m in Sources */,
 				DBA60F7D20F2F2F0002E5FCC /* NSData+YYAdd.m in Sources */,
@@ -779,6 +839,7 @@
 				DBA60F8320F2F2F0002E5FCC /* NSString+YYAdd.m in Sources */,
 				DBA60FAD20F2F87E002E5FCC /* ViewController+MASAdditions.m in Sources */,
 				DBA60FB220F2F87E002E5FCC /* View+MASAdditions.m in Sources */,
+				DBF8BB4E22BCAA8700411054 /* CRNotificationView.m in Sources */,
 				DBA60FCF20F2FECD002E5FCC /* CRWebViewController.m in Sources */,
 				DB64E12420EF12D500B931B6 /* CRNavigationController.m in Sources */,
 				DBA60F7B20F2F2F0002E5FCC /* NSBundle+YYAdd.m in Sources */,
@@ -801,6 +862,7 @@
 				DBA60F6B20F2F2F0002E5FCC /* UITextField+YYAdd.m in Sources */,
 				DBA60FAC20F2F87E002E5FCC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				DBA60F6E20F2F2F0002E5FCC /* UIDevice+YYAdd.m in Sources */,
+				DBF8BB5222BCAA9900411054 /* CRPickerView.m in Sources */,
 				DBA60FC320F2FC7E002E5FCC /* CRSystemAuthorization.m in Sources */,
 				DB24001C2154E1F600E48101 /* UIScrollView+CRExtension.m in Sources */,
 				DBA60F7220F2F2F0002E5FCC /* UIScreen+YYAdd.m in Sources */,
@@ -909,14 +971,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = FAUZYDV99Z;
+				DEVELOPMENT_TEAM = 7JGV58DRAE;
 				INFOPLIST_FILE = CRKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaroger.CRKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "915e2d62-e85d-43ac-a32c-0506fc935a08";
-				PROVISIONING_PROFILE_SPECIFIER = allApp;
+				PROVISIONING_PROFILE_SPECIFIER = all;
 			};
 			name = Debug;
 		};
@@ -928,7 +990,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CRKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoaroger.CRKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

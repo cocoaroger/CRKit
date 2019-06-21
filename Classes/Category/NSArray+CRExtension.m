@@ -11,6 +11,17 @@
 
 @implementation NSArray (CRExtension)
 
++ (NSString *)queryURLEncode:(NSString *)str {
+    return [str stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+}
+
++ (NSMutableDictionary *)dictionary:(NSString *)title url:(NSString *)url {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    dict[@"title"] = title;
+    dict[@"url"] = [self queryURLEncode:url];
+    return dict;
+}
+
 + (NSArray *)getInstalledMapAppWithEndLocation:(CLLocationCoordinate2D)endLocation {
     NSMutableArray *maps = [NSMutableArray array];
     
@@ -21,31 +32,20 @@
     
     //百度地图
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"baidumap://"]]) {
-        NSMutableDictionary *baiduMapDic = [NSMutableDictionary dictionary];
-        baiduMapDic[@"title"] = @"百度地图";
-        NSString *urlString = [[NSString stringWithFormat:@"baidumap://map/direction?origin={{我的位置}}&destination=latlng:%f,%f|name=目的地&mode=walking&coord_type=gcj02",endLocation.latitude,endLocation.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-
-        baiduMapDic[@"url"] = urlString;
-        [maps addObject:baiduMapDic];
+        NSString *urlString = [NSString stringWithFormat:@"baidumap://map/direction?origin={{我的位置}}&destination=latlng:%f,%f|name=目的地&mode=walking&coord_type=gcj02",endLocation.latitude,endLocation.longitude];
+        [maps addObject:[self dictionary:@"百度地图" url:urlString]];
     }
     
     //高德地图
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"iosamap://"]]) {
-        NSMutableDictionary *gaodeMapDic = [NSMutableDictionary dictionary];
-        gaodeMapDic[@"title"] = @"高德地图";
-        NSString *urlString = [[NSString stringWithFormat:@"iosamap://navi?sourceApplication=%@&lat=%f&lon=%f&dev=0&style=2",[UIApplication sharedApplication].appBundleName,endLocation.latitude,endLocation.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        gaodeMapDic[@"url"] = urlString;
-        [maps addObject:gaodeMapDic];
+        NSString *urlString = [NSString stringWithFormat:@"iosamap://navi?sourceApplication=%@&lat=%f&lon=%f&dev=0&style=2",[UIApplication sharedApplication].appBundleName,endLocation.latitude,endLocation.longitude];
+        [maps addObject:[self dictionary:@"高德地图" url:urlString]];
     }
     
     //谷歌地图
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"comgooglemaps://"]]) {
-        NSMutableDictionary *googleMapDic = [NSMutableDictionary dictionary];
-        googleMapDic[@"title"] = @"谷歌地图";
-        NSString *urlString = [[NSString stringWithFormat:@"comgooglemaps://?x-source=%@&x-success=%@&saddr=&daddr=%f,%f&directionsmode=walking",[UIApplication sharedApplication].appBundleName,@"nav123456",endLocation.latitude, endLocation.longitude] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-
-        googleMapDic[@"url"] = urlString;
-        [maps addObject:googleMapDic];
+        NSString *urlString = [NSString stringWithFormat:@"comgooglemaps://?x-source=%@&x-success=%@&saddr=&daddr=%f,%f&directionsmode=walking",[UIApplication sharedApplication].appBundleName,@"nav123456",endLocation.latitude, endLocation.longitude];
+        [maps addObject:[self dictionary:@"谷歌地图" url:urlString]];
     }
     
     return maps;

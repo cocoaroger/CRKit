@@ -11,6 +11,15 @@
 
 @interface NSMutableAttributedString (CRExtension)
 
+/**
+ 设置行高
+ 
+ @param lineSpace 行高
+ */
 - (void)cr_setLineSpace:(CGFloat)lineSpace;
 
+/**
+ 计算高度
+ */
+- (CGFloat)cr_heightWithWidth:(CGFloat)width;
 @end

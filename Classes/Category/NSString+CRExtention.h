@@ -45,6 +45,11 @@
  */
 - (CGRect)cr_measureFrameWithFont:(UIFont *)font size:(CGSize)size;
 
+/**
+ 链接地址转码
+ */
+- (NSString *)cr_queryURLEncode;
+
 @end
 
 /**

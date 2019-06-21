@@ -17,4 +17,12 @@
     [self addAttribute:NSParagraphStyleAttributeName value:paragraph range:self.string.rangeOfAll];
 }
 
+- (CGFloat)cr_heightWithWidth:(CGFloat)width {
+    CGSize size = CGSizeMake(width, CGFLOAT_MAX);
+    CGRect strRect = [self boundingRectWithSize:size
+                                        options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+                                        context:nil];
+    return strRect.size.height;
+}
+
 @end

@@ -10,6 +10,7 @@
 #import "RootViewController.h"
 #import "CRTestController.h"
 #import "CRNavigationController.h"
+#import "CRKit.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +28,7 @@
     self.window.rootViewController = rootVC;
     
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
